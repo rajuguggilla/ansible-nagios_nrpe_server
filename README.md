@@ -1,1 +1,1 @@
-# ansible-nagios_nrpe_server
+# Installing nagios agent NRPE on remote hosts using ansible 
