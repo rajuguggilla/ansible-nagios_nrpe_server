@@ -1,0 +1,6 @@
+---
+- hosts: nrpe-servers1,nrpe-servers2,nrpe-servers3 
+  become: true
+  gather_facts: true
+  roles: 
+     - nrpe-config1

@@ -1,0 +1,116 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+#green.example.com
+#blue.example.com
+#192.168.100.1
+#192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+[micro-services]
+10.20.22.105
+10.20.23.149
+10.20.23.104
+10.20.23.20
+10.20.23.185
+10.20.23.92
+10.20.22.147
+10.20.22.189
+10.20.22.72
+10.20.23.105
+10.20.22.52
+10.20.23.129
+10.20.22.218
+10.20.23.11
+10.20.22.214
+10.20.22.94
+10.20.22.137
+#10.20.21.173
+10.20.22.22
+10.20.23.51
+10.20.23.202
+10.20.22.248
+10.20.23.183
+10.20.22.135
+10.20.22.155 
+10.20.23.148 
+10.20.22.94
+10.20.22.55
+
+[nagios-agent]
+10.20.22.22
+10.20.22.39
+10.20.23.94
+10.20.23.183
+10.20.22.155
+10.20.22.204
+10.20.23.51	
+10.20.22.105
+10.20.23.116
+10.20.23.20
+#10.20.21.173-->vpn
+#10.20.23.116	
+#10.20.22.147-->localhost
+10.20.22.250
+#10.20.22.159-->Kubernetes
+10.20.23.13
+10.20.23.26
+54.86.139.66
+#alpha.example.org
+#beta.example.org
+#192.168.1.100
+#192.168.1.110
+10.20.22.94
+10.20.22.55
+
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+#www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+#[dbservers]
+#
+#db01.intranet.mydomain.net
+#db02.intranet.mydomain.net
+#10.25.1.56
+#10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+#db-[99:101]-node.example.com
+[dev]
+10.20.22.105
+
+[control-network]
+10.20.22.105
+
+[nrpe-servers1] 
+10.20.23.220	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem	ansible_user=ubuntu
+10.20.22.55	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.22.178	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.22.130	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.23.157	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu	ansible_python_interpreter=/usr/bin/python3	
+10.20.22.11	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.23.10	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.23.205	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+10.20.22.78	ansible_ssh_private_key_file=/home/ubuntu/chandra/dev-truclear-key-private.pem  ansible_user=ubuntu
+
+[nrpe-servers2]
+10.20.22.114	ansible_ssh_private_key_file=/home/ubuntu/chandra/test-flink-dev-node.pem	ansible_user=ubuntu
+
+[nrpe-servers3]
+10.20.21.173	ansible_ssh_private_key_file=/home/ubuntu/chandra/tcg-platform.pem	ansible_user=openvpnas
