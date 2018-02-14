@@ -182,8 +182,8 @@ connection_timeout=300
 
 # The following examples use hardcoded command arguments...
 
-command[check_users]={{ nagios_nrpe_server_plugins_dir }}/check_users -w 5 -c 10
-command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w 15,10,5 -c 30,25,20
+#command[check_users]={{ nagios_nrpe_server_plugins_dir }}/check_users -w 5 -c 10
+#command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w 15,10,5 -c 30,25,20
 #command[check_disk]={{ nagios_nrpe_server_plugins_dir }}/check_disk -w 20% -c 10% -p /dev/xvda1
 #command[check_zombie_procs]={{ nagios_nrpe_server_plugins_dir }}/check_procs -w 5 -c 10 -s Z
 #command[check_total_procs]={{ nagios_nrpe_server_plugins_dir }}/check_procs -w 150 -c 200
@@ -197,9 +197,11 @@ command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w 15,10,5 -
 command[check_docker]={{ nagios_nrpe_server_plugins_dir }}/check_docker --status RUNNING --container $ARG1$
 command[check_memory]={{ nagios_nrpe_server_plugins_dir }}/check_mem -w $ARG1$ -c $ARG2$ -W $ARG3$ -C $ARG4$
 command[check_cpu]={{ nagios_nrpe_server_plugins_dir }}/check_cpu.sh -w $ARG1$ -c $ARG2$ -uw $ARG3$ -uc $ARG4$ -iw $ARG5$ -ic $ARG6$ -sw $ARG7$ -sc $ARG8$
+command[check_open-files]={{ nagios_nrpe_server_plugins_dir }}/check_open_files.pl -w $ARG1$ -c $ARG2$
+command[check_service]={{ nagios_nrpe_server_plugins_dir }}/check_service.sh -s $ARG1$
 
-#command[check_users]={{ nagios_nrpe_server_plugins_dir }}/check_users -w $ARG1$ -c $ARG2$
-#command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w $ARG1$ -c $ARG2$
+command[check_users]={{ nagios_nrpe_server_plugins_dir }}/check_users -w $ARG1$ -c $ARG2$
+command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w $ARG1$ -c $ARG2$
 command[check_disk]={{ nagios_nrpe_server_plugins_dir }}/check_disk -w $ARG1$ -c $ARG2$ -p $ARG3$
 command[check_total_procs]={{ nagios_nrpe_server_plugins_dir }}/check_procs -w $ARG1$ -c $ARG2$
 ## -s $ARG3$

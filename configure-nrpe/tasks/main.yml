@@ -27,7 +27,7 @@
   notify: restart nagios-nrpe-server
 
 # Sync our plugins
-- name: Install cpu, memory and docker  plugins
+- name: Copying the custom plugins to nagios plugins directory 
   copy: >
     src="{{ item }}"
     dest="{{ nagios_nrpe_server_plugins_dir }}/"
