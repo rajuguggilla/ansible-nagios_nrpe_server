@@ -3,5 +3,5 @@
 
 nagios_nrpe_server_port: 5666
 ## 10.20.23.116 is the ip address of the nagios server
-nagios_nrpe_server_allowed_hosts: 127.0.0.1,10.20.23.116
+nagios_nrpe_server_allowed_hosts: 127.0.0.1,10.30.223.111
 nagios_nrpe_server_dont_blame_nrpe: 1
