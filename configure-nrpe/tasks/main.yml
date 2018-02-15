@@ -16,17 +16,17 @@
     src="nrpe-ubuntu.cfg.j2"
     dest="{{ nagios_nrpe_server_dir }}/nrpe.cfg"
     owner=root group=root mode=0644
-    when: ansible_distribution == 'Ubuntu'
+  when: ansible_distribution == 'Ubuntu'
   notify: restart nagios-nrpe-server
 
 # Create our config
- - name: Create nrpe.cfg from template
-   template: >
-     src="nrpe-debian.cfg.j2"
-     dest="{{ nagios_nrpe_server_dir }}/nrpe.cfg"
-     owner=root group=root mode=0644
-     when: ansible_distribution == 'Debian'
-   notify: restart nagios-nrpe-server
+- name: Create nrpe.cfg from template
+  template: >
+    src="nrpe-debian.cfg.j2"
+    dest="{{ nagios_nrpe_server_dir }}/nrpe.cfg"
+    owner=root group=root mode=0644
+  when: ansible_distribution == 'Debian'
+  notify: restart nagios-nrpe-server
                      
 
 # Create nrpe_ansible.cfg

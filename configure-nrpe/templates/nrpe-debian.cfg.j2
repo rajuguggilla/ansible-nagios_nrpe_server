@@ -198,7 +198,7 @@ command[check_docker-container]={{ nagios_nrpe_server_plugins_dir }}/check_docke
 command[check_memory]={{ nagios_nrpe_server_plugins_dir }}/check_mem -w 75 -c 90 -W 75 -C 90
 command[check_cpu]={{ nagios_nrpe_server_plugins_dir }}/check_cpu.sh -w 75 -c 90 -uw 75 -uc 90 -iw 75 -ic 90 -sw 75 -sc 90
 command[check_open-files]={{ nagios_nrpe_server_plugins_dir }}/check_open_files.pl -w 75 -c 90
-command[check_service]={{ nagios_nrpe_server_plugins_dir }}/check_service.sh -s docker
+command[check_docker-service]={{ nagios_nrpe_server_plugins_dir }}/check_service.sh -s docker
 
 #command[check_users]={{ nagios_nrpe_server_plugins_dir }}/check_users -w $ARG1$ -c $ARG2$
 #command[check_load]={{ nagios_nrpe_server_plugins_dir }}/check_load -w $ARG1$ -c $ARG2$
