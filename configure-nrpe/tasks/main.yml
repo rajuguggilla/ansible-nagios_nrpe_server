@@ -11,7 +11,7 @@
 - include: "packages-{{ ansible_os_family }}.yml"
 
 # Create our config
-- name: Create nrpe.cfg from template
+- name: Create nrpe.cfg from template [Ubuntu]
   template: >
     src="nrpe-ubuntu.cfg.j2"
     dest="{{ nagios_nrpe_server_dir }}/nrpe.cfg"
@@ -20,7 +20,7 @@
   notify: restart nagios-nrpe-server
 
 # Create our config
-- name: Create nrpe.cfg from template
+- name: Create nrpe.cfg from template [Debian]
   template: >
     src="nrpe-debian.cfg.j2"
     dest="{{ nagios_nrpe_server_dir }}/nrpe.cfg"
